@@ -203,8 +203,8 @@ def get_private_dir(subdir=None, *extra):
     path = os.path.expanduser('~/.vaex')
     if subdir:
         path = os.path.join(path, subdir, *extra)
-    if not os.path.exists(path):
-        os.makedirs(path)
+#     if not os.path.exists(path):
+    os.makedirs(path,exist_ok=True)
     return path
 
 
